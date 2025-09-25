@@ -63,4 +63,3 @@ with open(output_file, "w", encoding="utf-8", newline="") as outfile:
 
 
 print("评分已完成")
-
