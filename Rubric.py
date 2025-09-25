@@ -5,7 +5,6 @@ from dotenv import load_dotenv
 
 load_dotenv()
 api_key = os.getenv("OPENAI_API_KEY")
-
 client = OpenAI(api_key=api_key)
 
 prompt_template = """
@@ -64,3 +63,4 @@ with open(output_file, "w", encoding="utf-8", newline="") as outfile:
 
 
 print("评分已完成")
+
