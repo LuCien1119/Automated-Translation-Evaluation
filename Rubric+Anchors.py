@@ -4,11 +4,7 @@ from openai import OpenAI
 from dotenv import load_dotenv
 
 load_dotenv()
-
 api_key = os.getenv("OPENAI_API_KEY")
-if not api_key:
-    raise ValueError("没有找到 OPENAI_API_KEY，请检查 .env 文件是否存在并正确设置")
-
 client = OpenAI(api_key=api_key)
 
 prompt_template = """
@@ -75,5 +71,6 @@ with open(output_file, "w", encoding="utf-8", newline="") as outfile:
             feedback = reply.split("Feedback:", 1)[-1].strip()
 
         writer.writerow([score, feedback])
+
 
 print("评分已完成")
